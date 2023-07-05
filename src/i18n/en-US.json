@@ -1,0 +1,22 @@
+{
+  "title": "Rain Monitor",
+  "rmi-title": "RMI (Raining Intensity)",
+  "no-alarms": "No Alarms Currently In Effect",
+  "alarms-title": "Alarms: {0} In Effect",
+  "page-not-found": "Page not found",
+  "go-home": "Go Home",
+  "alarms": {
+    "暴雪": "Snow Storm",
+    "暴雨": "Rain Storm",
+    "高温": "Heat Wave",
+    "冰雹": "Hail",
+    "雷电": "Lightning",
+    "霾": "Haze",
+    "大雾": "Heavy Fog",
+    "霜冻": "Frost",
+    "大风": "Gale",
+    "寒潮": "Cold Wave",
+    "低温": "Cold",
+    "台风": "Typhoon"
+  }
+}

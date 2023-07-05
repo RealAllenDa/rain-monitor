@@ -8,13 +8,13 @@
 <script setup lang="ts">
 import RainGauge from 'components/RainGauge.vue';
 import AlarmDisplay from 'components/AlarmDisplay.vue';
-import { hnApi } from 'boot/axios';
-import { useWeatherWarningStore } from 'stores/weather-warning';
-import { useMeta, useQuasar } from 'quasar';
-import { onUnmounted, ref } from 'vue';
+import {hnApi} from 'boot/axios';
+import {useWeatherWarningStore} from 'stores/weather-warning';
+import {useMeta, useQuasar} from 'quasar';
+import {onUnmounted, ref} from 'vue';
 import jsonp from 'jsonp';
-import { useRainStore } from 'stores/rain';
-import { useI18n } from 'vue-i18n';
+import {useRainStore} from 'stores/rain';
+import {useI18n} from 'vue-i18n';
 
 const ready = ref(false);
 const weatherWarningStore = useWeatherWarningStore();
@@ -62,7 +62,7 @@ function getNmi() {
         console.error('api failed', data);
         return;
       }
-      const totalRain = data.result['hourly']['precipitation'][0]['value'] * 12;
+      const totalRain = data.result['realtime']['precipitation']['local']['intensity'] * 12;
       const rmi = mapNumber(totalRain, 0, 140, 0, 12);
       console.log('rain:', totalRain, 'RMI:', rmi);
       useRainStore().setRmi(rmi);
@@ -79,7 +79,7 @@ onUnmounted(() => {
   window.clearInterval(timer.value);
 });
 
-const { t } = useI18n();
+const {t} = useI18n();
 useMeta({
   title: t('title'),
 });

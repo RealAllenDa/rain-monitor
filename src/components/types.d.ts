@@ -15,5 +15,5 @@ declare interface WeatherWarningList {
 
 declare interface CaiYunAPI {
   status: string;
-  result: Record<never, never>;
+  result: Record<string, never>;
 }

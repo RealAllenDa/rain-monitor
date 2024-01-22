@@ -24,6 +24,7 @@ export const useWeatherWarningStore = defineStore('weather-warning', {
         寒潮: 1005,
         低温: 1056,
         台风: 1001,
+        道路结冰: 1021,
       },
     } as WeatherWarningState),
 
